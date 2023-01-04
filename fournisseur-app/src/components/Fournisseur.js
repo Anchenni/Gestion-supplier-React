@@ -31,6 +31,13 @@ const Fournisseur = () => {
 
 	}
 
+	const deleteFournisseur = (index) =>{
+		let tempList = fournisseurList;
+		tempList.splice(index, 1);
+		localStorage.setItem("fournisseurList", JSON.stringify(tempList));
+		setFournisseurList(tempList);
+		window.location.reload();
+	}
 	
 
 
@@ -46,10 +53,26 @@ const Fournisseur = () => {
 				</div>
 
 				<AddFournisseur modal = {modal} toggle = {toggle} save = {saveFournissuer}/>
-
-				
 				<div className='table-fournisseur'>
-					{fournisseurList && fournisseurList.map((obj, index) => <FournisseurTable fournisseurObj = {obj} index = {index} />)}
+		
+			<table class="table table-striped ">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Fournisseur</th>
+					<th scope="col">N° de TVA</th>
+					<th scope="col">Adresse</th>
+					<th scope="col">Teléphone</th>
+					<th scope="col">Commentaire</th>
+					<th scope="col">Modifier</th>
+					<th scope="col">Supprimer</th>
+				</tr>
+			</thead>
+				
+				
+					{fournisseurList && fournisseurList.map((obj, index) => <FournisseurTable fournisseurObj = {obj} index = {index} deleteFournisseur = {deleteFournisseur} />)}
+					</table>
+		
 				</div>
 					
 				

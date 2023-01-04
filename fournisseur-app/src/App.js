@@ -6,16 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
 	return (
 		<>
-		<div className="sidebar">
-			<a className="active" href="#home">Dashboard</a>
-			<a href="#news">Login</a>
-			<a href="#contact">Connection</a>
-			<a href="#about">Fournisseur</a>
-		</div>
+			<div className="sidebar">
+				<a className="active" href="#home">Dashboard</a>
+				<a href="#news">Login</a>
+				<a href="#contact">Connection</a>
+				<a href="#about">Fournisseur</a>
+			</div>
 
-<div>
-			<Fournisseur />
-		</div>
+			<div>
+				<Fournisseur />
+			</div>
 		</>
 		
 	);
